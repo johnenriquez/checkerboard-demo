@@ -22,7 +22,10 @@ body {
 
 .square {
 	width:48px;
-	height:48px;
+  height:48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row.row-even .square:nth-of-type(2n) {
@@ -37,4 +40,19 @@ body {
 }
 .row.row-odd .square:nth-child(2n+1) {
   background-color: #fff;
+}
+
+.piece {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 3px solid #333;
+}
+
+.piece.player1 {
+  background-color: #000;
+}
+
+.piece.player2 {
+  background-color: #f00;
 }
