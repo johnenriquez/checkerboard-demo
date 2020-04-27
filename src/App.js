@@ -11,7 +11,7 @@ class Checkerboard extends React.Component {
     }
     if (rowIndex % 2 === 0) {
       return (
-        <div class="row row-even">{row}</div>
+        <div className="row row-even">{row}</div>
       );
     } else {
       return (
