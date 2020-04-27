@@ -6,9 +6,11 @@ import Checkerboard from './Checkerboard';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      size: 8
-    }
+
+    // initially set boardSize to 8
+    this.state = { size: 8 }
+
+    // binding for onChanges
     this.updateBoardSize = this.updateBoardSize.bind(this);
   }
 
