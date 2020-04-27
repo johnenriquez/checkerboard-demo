@@ -15,6 +15,8 @@ class App extends React.Component {
   }
 
   updateBoardSize(e) {
+    // TODO:
+    // what happens to pieces that get clipped when board shrinks?
     this.setState({ size: e.target.value });
   }
 
