@@ -4,13 +4,6 @@ import './styles.css';
 
 class Checkerboard extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      size: 8
-    }
-  }
-
   renderRow(rowIndex, boardSize) {
     let row = [];
     for (let i = 0; i < boardSize; i++) {
@@ -28,7 +21,7 @@ class Checkerboard extends React.Component {
   }
 
   render() {
-    let boardSize = this.state.size;
+    let boardSize = this.props.size;
     let checkerboard = [];
     for (let i = 0; i < boardSize; i++) {
       checkerboard.push(this.renderRow(i, boardSize));
@@ -40,10 +33,27 @@ class Checkerboard extends React.Component {
 }
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: 8
+    }
+    this.updateBoardSize = this.updateBoardSize.bind(this);
+  }
+
+  updateBoardSize(e) {
+    this.setState({ size: e.target.value });
+  }
+
   render() {
     return (
       <div className="App">
-        <Checkerboard />
+        <input
+          type="number"
+          value={this.state.size}
+          onChange={this.updateBoardSize}
+        />
+        <Checkerboard size={this.state.size} />
       </div>
     );
   }
