@@ -7,15 +7,10 @@ class Checkerboard extends React.Component {
     for (let i = 0; i < boardSize; i++) {
       row.push(<div className="square" key={`${rowIndex}-${i}`}></div>);
     }
-    if (rowIndex % 2 === 0) {
-      return (
-        <div className="row row-even" key={`${rowIndex}`}>{row}</div>
-      );
-    } else {
-      return (
-        <div className="row row-odd" key={`${rowIndex}`}>{row}</div>
-      );
-    }
+    let rowClass = `row ${(rowIndex % 2 === 0) ? 'row-even' : 'row-odd'}`;
+    return (
+      <div className={rowClass} key={`${rowIndex}`}>{row}</div>
+    );
   }
 
   render() {
